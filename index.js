@@ -10,6 +10,8 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
+res.headers('Access-Control-Allow-Origin', '*');
+
 app.post('/chatbot', (req, res) => {
     // Handle incoming request
     // Process message and get response
