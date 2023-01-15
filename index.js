@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3030;
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 app.use(express.json()); // read JSON BODY
 app.use(express.urlencoded({ extended: true })); // read URL encoded bdoy
@@ -17,7 +17,9 @@ app.post('/chatbot', (req, res) => {
     console.log(message);
     const number = message.match(/\d+/);
     if (number) {
-        fetch(`http://numbersapi.com/${number}?type=trivia`).then(response => response.text()).then(data => {
+        fetch(`http://numbersapi.com/${number}?type=trivia`)
+        .then(response => response.text())
+        .then(data => {
             res.json({
                 text: data
             });
