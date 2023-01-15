@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
+
+var $ = jQuery = require('jquery')(window);
 
 app.use(express.json()); // read JSON BODY
 app.use(express.urlencoded({ extended: true })); // read URL encoded bdoy

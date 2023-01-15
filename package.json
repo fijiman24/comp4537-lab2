@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/fijiman24/comp4537-lab2#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jquery": "^3.6.3",
+    "jsdom": "^21.0.0"
   }
 }
