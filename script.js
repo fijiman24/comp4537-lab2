@@ -5,6 +5,9 @@ $(document).ready(function () {
         $.ajax({
             type: 'POST',
             url: 'https://chatbot-bmas.onrender.com/chatbot',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
             data: {
                 message: message
             },
