@@ -1,10 +1,10 @@
-const express = require('express');
+import express, { json, urlencoded } from 'express';
 const app = express();
 const PORT = process.env.PORT || 3030;
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-app.use(express.json()); // read JSON BODY
-app.use(express.urlencoded({ extended: true })); // read URL encoded bdoy
+app.use(json()); // read JSON BODY
+app.use(urlencoded({ extended: true })); // read URL encoded bdoy
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
