@@ -9,7 +9,6 @@ $(document).ready(function () {
                 message: message
             },
             success: function (response) {
-                response.__setitem__("Access-Control-Allow-Origin", "*")
                 let newMessage = $('<div>', {
                     class: 'message'
                 }).text(response.text);
